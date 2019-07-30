@@ -16,6 +16,7 @@ RUN export uid=1000 gid=1000 && \
     echo "retroarch:x:${uid}:" >> /etc/group && \
     echo "retroarch ALL=(ALL) NOPASSWD: ALL" > /etc/sudoers.d/retroarch && \
     chmod 0440 /etc/sudoers.d/retroarch && \
+    chmod -R 777 /home/retroarch && \
     chown ${uid}:${gid} -R /home/retroarch
 
 USER retroarch
